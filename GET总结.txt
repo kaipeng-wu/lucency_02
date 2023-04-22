@@ -1,0 +1,78 @@
+# 初始化 Git 仓库命令
+git init
+
+# 检查文件状态
+git status 
+git status -s   // 精简
+
+# 跟踪新文件
+git add 文件名
+git add . 
+
+# 清空终端 
+clear
+
+# 将暂存区文件提交到到 Git仓库中
+git commit -m  "提交信息"
+
+# 撤销对文件的修改   ！危险性高 慎重操作
+git checkout -- "文件名"
+
+# 取消暂存的文件
+git reset HEAD "要移除的文件名"
+
+# 跳过暂存 直接保存仓库
+git commit -a -m "描述消息"
+
+# 从git 仓库和工作区同时移除index.js 文件
+git rm -f inex.js
+# 只从 Git 仓库中移除 index.css 但保留工作区中的 index.css 文件
+git rm --cached index.css
+
+# 查看提交历史
+git log 
+git log -2
+git log -2 --pretty=oneline
+
+# 在一行上展示最近两条提交的历史信息 并自定义输出格式
+# %h 提交的简写哈希值 %an作者的名字 %ar作者修订日期 %s提交说明
+git log --2 --pretty=format:"%h | %an | %ar | %s"
+
+# 回退到指定版本
+# 使用 git reset --hard 命令，根据指定的 ID 回退到指定版本
+git reset --hard <CommitID>
+
+# 在旧版本中使用 git reflog --pretty=oneline 命令，查看操作的历史
+git reflog --preety==oneline
+
+# 再次根据最新的提交 ID 跳转到最新的版本
+git reset --haed <CommitID>
+
+
+
+# 检测 Github 的SSH key 是否配置成功
+ssh -T git@github.com
+
+# 将远程仓库克隆到本地
+git clone  远程仓库的地址
+
+
+
+
+# 查看当前 Git 仓库中的所有分支
+git branch
+
+# 基于当前分支，创建一个新分支
+git branch 分支名称    // 注意：执行完创建命令，用户所处的还是 master分支
+
+# 切换到指定的分支上
+git checkout 分支名称
+
+# 创建指定名称的新分支，立即切换到新分支
+-b  表示创建了一个新分支
+checkot 表示切换到刚才新建的分支上
+git checkout -b 分支名称
+
+# 合并分支 （先切换分支 在合并分支）
+1. git checkout master   // 切换到主分支
+2. git merge login       // 将login 合并到主分支
