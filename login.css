@@ -1,0 +1,9 @@
+body,html {
+    padding: 0;
+    margin: 0;
+    background-color: palevioletred;
+}
+h1 {
+    font-size: red;
+    color: aquamarine;
+}
